@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+import daisyui from "daisyui";
+import typography from "tailwind-typography"
+import themes from "daisyui/src/theming/themes"
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,12 +10,52 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      container: {
+        center :true,
+        padding: "1rem",
       },
+      fontFamily: {
+        primary : "YekanBakh"
+      },
+      minHeight: {
+        auto: "auto"
+      },
+      colors : {
+        "primary-focus": "#208d31",
+        "secondary-focus" : "#017da8",
+        dark : themes.dark["base-300"]
+      }
     },
   },
-  plugins: [],
+  plugins: [
+      daisyui,
+      typography
+  ],
+  daisyui: {
+    rtl: true,
+    themes: [
+      {
+        light: {
+          ...themes.light,
+          primary: "#24a538",
+          "primary-focus": "#208d31",
+          "primary-content": themes.light['base-100'],
+          "accent-content": themes.light['base-content'],
+          secondary: "#009ed4",
+          "secondary-focus" : "#017da8",
+          "secondary-content": themes.light['base-100'],
+        },
+        dark: {
+          ...themes.dark,
+          primary: "#24a538",
+          "primary-focus": "#208d31",
+          "primary-content": themes.light['base-100'],
+          "accent-content": themes.dark['base-content'],
+          secondary: "#009ed4",
+          "secondary-focus" : "#017da8",
+          "secondary-content": themes.dark['base-100'],
+        },
+      },
+    ],
+  },
 }
