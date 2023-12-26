@@ -7,3 +7,10 @@ export default function Logo({className}) {
         theme === "light" ?  "/assets/images/brand/logo-light.png" :"/assets/images/brand/logo-dark.png"
     } alt="" />
 }
+export function DarkLogo({className}) {
+    return <img className={className} src={"/assets/images/brand/logo-dark.png"} alt="" />
+}
+
+export function LightLogo({className}) {
+    return <img className={className} src={"/assets/images/brand/logo-light.png"} alt="" />
+}

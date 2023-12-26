@@ -29,8 +29,7 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className="flex items-center gap-1 navbar-end">
-                    <Button variant="ghost" className="px-8 min-h-[2.5rem]">ورود</Button>
-                    <Button variant="primary" className="px-8 min-h-[2.5rem]">ثبت نام</Button>
+                    <Button link="/auth" variant="primary" className="px-8 min-h-[2.5rem]">ورود / عضویت</Button>
                 </div>
             </div>
         </div>
