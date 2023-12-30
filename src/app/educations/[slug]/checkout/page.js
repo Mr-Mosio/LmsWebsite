@@ -3,7 +3,7 @@ import Logo from "@/components/global/logo";
 import Button from "@/components/global/button";
 import Course from "@/components/education/course";
 import Toman from "@/components/icons/toman";
-import {Wallet} from "iconsax-react";
+import {Ticket, Wallet} from "iconsax-react";
 
 export default function Page() {
     return <div className="h-screen bg-base-200 flex items-center ">
@@ -13,6 +13,19 @@ export default function Page() {
             </Link>
 
             <div className="grid grid-cols-3 gap-5">
+                <div className="space-y-5">
+                    <Course/>
+                    <div className="card bg-base-100">
+                        <div className="card-body flex-row justify-between items-center p-4">
+                            <div>
+                                <h3 className="text-sm font-semibold text-primary">موجودی کیف پول</h3>
+                                <h4 className="text-2xl font-bold flex items-center">250,000 <Toman
+                                    className="w-6 h-6"/></h4>
+                            </div>
+                            <Wallet variant="Bulk" className="w-10 h-10 text-primary"/>
+                        </div>
+                    </div>
+                </div>
                 <div className="card bg-base-100 w-full col-span-2">
                     <div className="card-body">
                         <div className="border-r-2 border-base-200 ">
@@ -39,7 +52,9 @@ export default function Page() {
                             </ul>
                         </div>
                         <div className="border-r-2 border-base-200 ">
-                            <div className="border-r-2 border-primary -mr-[2px] px-2 font-semibold">مواردی ک میتوانید اضافه کنید</div>
+                            <div className="border-r-2 border-primary -mr-[2px] px-2 font-semibold">مواردی ک میتوانید
+                                اضافه کنید
+                            </div>
                             <ul className="font-medium">
                                 {
                                     [1, 2, 3, 4, 5].map(item => <li className="px-3 flex items-center gap-2">
@@ -59,18 +74,23 @@ export default function Page() {
                                 }
                             </ul>
                         </div>
-                    </div>
-                </div>
-                <div className="space-y-5">
-                    <Course/>
-                    <div className="card bg-base-100">
-                        <div className="card-body flex-row justify-between items-center p-4">
+                        <div className="flex item-scenter mt-5">
+                            <button className="flex items-center gap-1.5 text-primary font-medium">
+                                <Ticket className="w-5 h-5 mb-1" />
+                                <span>کد تخفیف دارید ؟</span>
+                            </button>
+                        </div>
+                        <div className="flex items-center justify-between mt-5">
                             <div>
-                                <h3 className="text-sm font-semibold text-primary">موجودی کیف پول</h3>
+                                <h3 className="text-sm font-semibold text-primary">مبلغ قابل پرداخت</h3>
                                 <h4 className="text-2xl font-bold flex items-center">250,000 <Toman
                                     className="w-6 h-6"/></h4>
                             </div>
-                            <Wallet variant="Bulk" className="w-10 h-10 text-primary"/>
+                            <div className="join">
+                                <Button variant="primary" className="px-8 join-item btn-outline">پرداخت از کیف
+                                    پول</Button>
+                                <Button variant="primary" className="px-8 join-item">پرداخت مستقیم</Button>
+                            </div>
                         </div>
                     </div>
                 </div>

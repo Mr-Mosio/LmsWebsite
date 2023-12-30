@@ -14,3 +14,10 @@ export function DarkLogo({className}) {
 export function LightLogo({className}) {
     return <img className={className} src={"/assets/images/brand/logo-light.png"} alt="" />
 }
+
+export function SymbolLogo({className}) {
+    const {theme} = useTheme()
+    return <img className={className} src={
+        theme === "light" ?  "/assets/images/brand/symbol-light.png" :"/assets/images/brand/symbol-dark.png"
+    } alt="" />
+}
