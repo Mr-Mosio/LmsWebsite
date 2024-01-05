@@ -1,6 +1,4 @@
 import {ArrowCircleDown, ArrowLeft, Teacher} from "iconsax-react";
-import Card from "@/components/global/card";
-import Toman from "@/components/icons/toman";
 import Course from "@/components/education/course";
 
 export default function TeacherSinglePage() {
